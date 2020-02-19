@@ -42,7 +42,6 @@ public class Streams1 {
                 .stream()
                 .filter((s) -> s.startsWith("a"))
                 .forEach(System.out::println);
-
         /**
          * sorted 排序.
          * 是一个中间操作，返回的是排序好后的Stream。如果你不指定一个自定义的Comparator则会使用默认排序。
@@ -102,7 +101,7 @@ public class Streams1 {
         Optional<String> reduced =
                 stringCollection
                         .stream()
-                        .sorted()
+                        .sorted((a,b) -> a.compareTo(b))
                         .reduce((s1, s2) -> s1 + "#" + s2);
 
         reduced.ifPresent(System.out::println);

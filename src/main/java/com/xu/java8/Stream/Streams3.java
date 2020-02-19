@@ -13,17 +13,16 @@ import java.util.concurrent.TimeUnit;
  * @date 16/08/31
  */
 public class Streams3 {
-    public static final int MAX = 1000000;
+    public static final int MAX = 2000000;
 
     public static void sortSequential() {
         List<String> values = new ArrayList<>(MAX);
         for (int i = 0; i < MAX; i++) {
-            UUID uuid = UUID.randomUUID();
-            values.add(uuid.toString());
+            values.add(UUID.randomUUID().toString());
         }
 
         long t0 = System.nanoTime();
-        long count = values.stream().sorted().count();
+        long count = values.stream().sorted(( a, b ) -> a.compareTo(b)).count();
         System.out.println(count);
 
         long t1 = System.nanoTime();

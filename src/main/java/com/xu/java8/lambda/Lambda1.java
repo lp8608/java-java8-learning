@@ -29,6 +29,8 @@ public class Lambda1 {
         /**Java编译器可以自动推导出参数类型，所以你可以不用再写一次类型*/
         Collections.sort(names, (a, b) -> b.compareTo(a));
 
+        Collections.sort(names, (s,t)->s.compareTo(t));
+
         System.out.println(names);
 
         names.sort(Collections.reverseOrder());

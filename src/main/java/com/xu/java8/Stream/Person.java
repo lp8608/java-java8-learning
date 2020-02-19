@@ -1,7 +1,9 @@
 package com.xu.java8.Stream;
 
 public class Person {
-
+    Person() { i = (j++ != 0) ? ++j : --j; }
+    public int i;
+    public static int j = 0;
     Integer age;
 
     public Integer getAge() {
